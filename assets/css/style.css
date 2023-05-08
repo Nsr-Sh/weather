@@ -56,6 +56,7 @@ body {
   position: absolute;
   right: 14%;
   top: 38%;
+  cursor: pointer;
 }
 
 #box #description {
@@ -96,8 +97,9 @@ body {
   margin-left: 22px;
   text-align: left;
 }
+
 #box #detail #left #city {
-  font-size: 22px;
+  font-size: 18px;
 }
 #box #detail #left #temp {
   font-size: 55px;
