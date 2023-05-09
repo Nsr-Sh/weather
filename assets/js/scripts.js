@@ -42,7 +42,7 @@ input.addEventListener("keydown", (e) => {
 // output: json response object (request.responseText)
 function getWeatherData(cityName) {
   return new Promise(function (resolve, reject) {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
     const req = new XMLHttpRequest();
     req.open("Get", url);
     req.send();
@@ -66,7 +66,7 @@ function updateDom(data) {
   wind.textContent = `${Math.round(data.wind.speed)}km/h`;
   humidity.textContent = `${Math.round(data.main.humidity)}%`;
   img.src = `assets/images/${data.weather[0].main}.png`;
-  flag.src = `http://openweathermap.org/images/flags/${data.sys.country.toLowerCase()}.png`;
+  flag.src = `https://openweathermap.org/images/flags/${data.sys.country.toLowerCase()}.png`;
 
   // change description
   switch (data.weather[0].main) {
