@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;400;600&family=Poppins:wght@300;400;500;600&family=Roboto:wght@100;400;700&display=swap");
 
 :root {
-  --pink-l: #ffafbc;
-  --pink-d: #ef9ba9;
+  --pink: #ffafbc;
   --blue: #a2d9e0;
+  --green: #93e2c8;
+  --orange: ##f9b089;
   --withe: #f6f6f6;
   --gray-l: #928f8f;
   --gray-d: #625d5d;
-  --orange-l: #ffc9a9;
-  --orange-d: ##f9b087;
 }
 
 * {
@@ -19,7 +18,7 @@
 
 body {
   margin: 0;
-  background-color: var(--pink-l);
+  background-color: var(--pink);
   color: var(--withe);
   font-family: "Poppins", sans-serif;
 }
@@ -86,6 +85,7 @@ body {
 }
 #box #image img {
   width: 60%;
+  animation: move 5s linear infinite;
 }
 
 #box #detail {
@@ -137,4 +137,19 @@ body {
 
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px 0px;
+}
+
+@keyframes move {
+  50% {
+    transform: translate(15px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

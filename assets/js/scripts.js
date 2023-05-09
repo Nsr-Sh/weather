@@ -7,12 +7,15 @@ const input = document.querySelector("#box input"),
   humidity = document.querySelector("#humidity"),
   img = document.querySelector("#img"),
   des = document.querySelector("#desTxt"),
-  error = document.querySelector("#error");
-apiKey = "87ab862050fd34bc774a93591de17362";
+  error = document.querySelector("#error"),
+  box = document.querySelector("#box"),
+  apiKey = "87ab862050fd34bc774a93591de17362";
 let data;
 
 // event
-searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("click", eventHandler);
+
+function eventHandler() {
   getWeatherData(input.value)
     .then((res) => {
       data = JSON.parse(res);
@@ -21,7 +24,7 @@ searchBtn.addEventListener("click", () => {
     .catch((err) => {
       error.style.display = "block";
     });
-});
+}
 
 // Function getWeatherData: Send request to API and get data
 // input: city name
@@ -41,16 +44,15 @@ function getWeatherData(cityName) {
     };
   });
 }
+
 // Function updateDom:Update the DOM based on data received from the API
 function updateDom(data) {
-  if (error.style.display == "block") error.style.display = "none";
+  error.style.display = "none";
+  img.style.animation = "move 5s linear infinite";
   city.textContent = data.name;
   temp.textContent = `${Math.round(data.main.temp)}°c`;
   wind.textContent = `${Math.round(data.wind.speed)}km/h`;
   img.src = `assets/images/${data.weather[0].main}.png`;
-  document.querySelector(
-    "#image"
-  ).src = `assets/images/${data.weather[0].main}.png`;
 
   // change description
   switch (data.weather[0].main) {
@@ -59,6 +61,7 @@ function updateDom(data) {
       break;
     case "Clear":
       des.textContent = "cleary";
+      img.style.animation = " rotate 30s linear infinite";
       break;
 
     case "Rain":
