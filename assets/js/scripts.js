@@ -13,7 +13,7 @@ const input = document.querySelector("#box input"),
   apiKey = "87ab862050fd34bc774a93591de17362";
 let data;
 
-// event
+// event: click search icon
 searchBtn.addEventListener("click", eventHandler);
 
 function eventHandler() {
@@ -28,6 +28,13 @@ function eventHandler() {
       main.style.display = "none";
     });
 }
+
+//  event:enter key
+input.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") {
+    searchBtn.click();
+  }
+});
 
 // Function getWeatherData: Send request to API and get data
 // input: city name
