@@ -89,5 +89,6 @@ function updateDom(data) {
       break;
     default:
       des.textContent = "Mist";
+      img.src = `assets/images/Mist.png`;
   }
 }
