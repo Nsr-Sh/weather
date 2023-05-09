@@ -23,6 +23,7 @@ function eventHandler() {
       updateDom(data);
     })
     .catch((err) => {
+      console.log(err);
       error.style.display = "block";
       main.style.display = "none";
     });
@@ -41,7 +42,7 @@ function getWeatherData(cityName) {
       if (req.status === 200) {
         resolve(this.responseText);
       } else {
-        reject("city not found");
+        reject("⚠ city not found ⚠");
       }
     };
   });
