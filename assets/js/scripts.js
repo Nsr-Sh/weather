@@ -10,6 +10,7 @@ const input = document.querySelector("#box input"),
   error = document.querySelector("#error"),
   box = document.querySelector("#box"),
   main = document.querySelector(".main"),
+  flag = document.querySelector("#flag"),
   apiKey = "87ab862050fd34bc774a93591de17362";
 let data;
 
@@ -65,6 +66,7 @@ function updateDom(data) {
   wind.textContent = `${Math.round(data.wind.speed)}km/h`;
   humidity.textContent = `${Math.round(data.main.humidity)}%`;
   img.src = `assets/images/${data.weather[0].main}.png`;
+  flag.src = `http://openweathermap.org/images/flags/${data.sys.country.toLowerCase()}.png`;
 
   // change description
   switch (data.weather[0].main) {

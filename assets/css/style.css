@@ -103,6 +103,7 @@ body {
 
 #box #detail #left #city {
   font-size: 18px;
+  display: inline-block;
 }
 #box #detail #left #temp {
   font-size: 55px;
