@@ -67,7 +67,7 @@ body {
   font-weight: 300;
   position: absolute;
   left: 10%;
-  margin-top: 15px;
+  margin-top: 2px;
 }
 
 #box #error {
@@ -152,4 +152,8 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.main {
+  display: none;
 }

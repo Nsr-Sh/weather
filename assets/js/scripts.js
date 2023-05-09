@@ -9,6 +9,7 @@ const input = document.querySelector("#box input"),
   des = document.querySelector("#desTxt"),
   error = document.querySelector("#error"),
   box = document.querySelector("#box"),
+  main = document.querySelector(".main"),
   apiKey = "87ab862050fd34bc774a93591de17362";
 let data;
 
@@ -23,6 +24,7 @@ function eventHandler() {
     })
     .catch((err) => {
       error.style.display = "block";
+      main.style.display = "none";
     });
 }
 
@@ -49,9 +51,11 @@ function getWeatherData(cityName) {
 function updateDom(data) {
   error.style.display = "none";
   img.style.animation = "move 5s linear infinite";
+  main.style.display = "Block";
   city.textContent = data.name;
   temp.textContent = `${Math.round(data.main.temp)}°c`;
   wind.textContent = `${Math.round(data.wind.speed)}km/h`;
+  humidity.textContent = `${Math.round(data.main.humidity)}km/h`;
   img.src = `assets/images/${data.weather[0].main}.png`;
 
   // change description
