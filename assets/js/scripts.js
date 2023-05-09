@@ -56,7 +56,7 @@ function updateDom(data) {
   city.textContent = data.name;
   temp.textContent = `${Math.round(data.main.temp)}°c`;
   wind.textContent = `${Math.round(data.wind.speed)}km/h`;
-  humidity.textContent = `${Math.round(data.main.humidity)}km/h`;
+  humidity.textContent = `${Math.round(data.main.humidity)}%`;
   img.src = `assets/images/${data.weather[0].main}.png`;
 
   // change description
@@ -80,11 +80,7 @@ function updateDom(data) {
     case "Drizzle":
       des.textContent = "drizzling";
       break;
-
-    case "Mist":
-      des.textContent = "misty";
-      break;
     default:
-      des.textContent = "drizzle";
+      des.textContent = "Mist";
   }
 }
