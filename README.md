@@ -1,2 +1,2 @@
-# weather-
+# weather-api
 promisifying xmlhttprequest
