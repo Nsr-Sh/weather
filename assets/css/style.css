@@ -50,13 +50,16 @@ body {
   border: none;
   outline: none;
   border-radius: 30px;
+  font-size: 16px;
 }
+
 #box #searchbox i {
   color: black;
   position: absolute;
-  right: 14%;
-  top: 38%;
+  right: 13%;
+  top: 31%;
   cursor: pointer;
+  padding: 5px;
 }
 
 #box #description {
@@ -73,7 +76,7 @@ body {
   margin-left: 45px;
   margin-top: 0;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--gray-d);
   display: none;
 }
